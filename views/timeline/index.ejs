@@ -1,0 +1,87 @@
+<% layout('layout/boilerplate')%>
+
+<section>
+    <div class="gap gray-bg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row" id="page-contents">
+
+                        <%- include('../partials/sideBar1') %> 
+                        <div class="col-lg-6"><!-- centerl meta -->
+                            <div class="central-meta">
+                                <%- include('../partials/new-post') %> 
+                            </div>
+                            <% for(let post of posts){ %> 
+
+                            <div class="central-meta item">
+                                <div class="user-post">
+                                    <form action="">
+                                        <button class="submit float-right">Follow</button>
+                                    </form>
+                                    <div class="friend-info">
+                                        
+                                        <figure>
+                                            <img src="<%=post.author.dp%>" alt="">
+                                        </figure>
+                                        <div class="friend-name">
+                                            <ins><a href="time-line.html" title=""><%= post.author.username %> </a></ins>
+                                            <span>published: <%= post.createdAt %> </span>
+
+                                        </div>
+                                        <div class="">
+                                            <h1><%= post.title %> </h1>
+                                             <h6 class="text-muted"><%= post.location %> </h3>
+                                                <p class="starability-result" data-rating=<%= post.rating %> >
+                                                    Rated: 3  stars
+                                                  </p>
+                                        </div>
+                                        <div class="post-meta">
+                                            <img src="<%= post.image %> " alt="">
+                                            <div class="we-video-info  ">
+                                                <ul class="float-right">
+                                                    <li>
+                                                        <span class="comment" data-toggle="tooltip" title="Comments">
+                                                            <i class="fa fa-comments-o"></i>
+                                                            <ins><%= post.comments?post.comments.length:0 %> </ins>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="like" data-toggle="tooltip" title="like">
+                                                            <i class="ti-heart"></i>
+                                                            <ins><%= post.likes %> </ins>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+ 
+                                            <div class="description">     
+                                                <p>
+                                                    <%= post.post %> 
+                                                </p>
+                                            </div>
+
+                                            <form action="/post/<%= post.id %>" method="get">
+                                                <button class="submit float-right">View</button>
+                                            </form>
+
+
+                                               
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %> 
+
+                            </div>
+
+                        <%- include('../partials/sidebar3') %> 
+
+
+                    </div>	
+                </div>
+            </div>
+        </div>
+    </div>	
+</section>

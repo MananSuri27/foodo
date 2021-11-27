@@ -1,0 +1,47 @@
+<div class="new-postbox"> <!--new post-->
+    <figure>
+        <img src="images/resources/admin2.jpg" alt="">
+    </figure>
+    <div class="newpst-input">
+        <form method="post" action="/post">
+
+            <label for="title"> Title</label>
+            <input type="text" id="title" name=post[title]" style="width:100%">
+            <br>
+            <label for="location"> Location</label>
+            <input type="text" id="title" name="post[location]" style="width:100%">
+   
+            
+    
+
+            <textarea rows="2" placeholder="Write your review" name="post[post]"></textarea>
+            <div class="attachments">
+                <ul>
+                    <li>
+                        <i class="fa fa-image"></i>
+                        <label class="fileContainer">
+                            <input type="file">
+                        </label>
+                    </li>
+                    <li>
+                        <button type="submit">Post</button>
+                    </li>
+                </ul>
+            </div>
+             Rating
+            <fieldset class="starability-basic" id="post[rating]" >
+                <input type="radio" id="no-rate" class="input-no-rate" name="post[rating]" value="0" checked aria-label="No rating." />
+                <input type="radio" id="first-rate1" name="post[rating]" value="1" />
+                <label for="first-rate1" title="Terrible">1 star</label>
+                <input type="radio" id="first-rate2" name="post[rating]" value="2" />
+                <label for="first-rate2" title="Not good">2 stars</label>
+                <input type="radio" id="first-rate3" name="post[rating]" value="3" />
+                <label for="first-rate3" title="Average">3 stars</label>
+                <input type="radio" id="first-rate4" name="post[rating]" value="4" />
+                <label for="first-rate4" title="Very good">4 stars</label>
+                <input type="radio" id="first-rate5" name="post[rating]" value="5" />
+                <label for="first-rate5" title="Amazing">5 stars</label>
+              </fieldset>
+        </form>
+    </div>
+</div>
